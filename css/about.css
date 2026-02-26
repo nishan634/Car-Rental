@@ -1,0 +1,141 @@
+/* Light theme tokens (adjusted for black background/white text) */
+:root {
+  --bg: #000000;
+  --surface: #000000;
+  --text: #ffffff;
+  --muted: #cccccc;
+  --heading: #ffffff;
+  --border: #333333;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark theme token overrides (also black/white) */
+[data-theme="dark"] {
+  --bg: #000000;
+  --surface: #000000;
+  --text: #ffffff;
+  --muted: #bbbbbb;
+  --heading: #ffffff;
+  --border: #222222;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
+}
+
+/* Base layout and typography */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 95% 10%, rgba(255, 255, 255, 0.13), transparent 36%),
+    var(--bg);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+}
+
+p,
+li,
+a {
+  color: var(--text);
+}
+
+.lead,
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Accessibility skip link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* Header branding and theme toggle */
+.brand-link {
+  color: var(--heading);
+}
+
+.brand-logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.45rem;
+  border-radius: 999px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 0.08rem;
+}
+
+.theme-toggle-btn {
+  min-width: 2.25rem;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--surface) !important;
+}
+
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .about-footer {
+  border-color: var(--border) !important;
+}
+
+/* About page layout and cards */
+.about-main {
+  min-height: calc(100vh - 136px);
+}
+
+.about-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+}
+
+.about-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+.values-list {
+  padding-left: 1.1rem;
+}
+
+.values-list li + li {
+  margin-top: 0.45rem;
+}
+
+/* Footer styling */
+.about-footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive spacing improvements */
+@media (min-width: 768px) {
+  .about-hero,
+  .about-card {
+    padding: 1.6rem;
+  }
+}

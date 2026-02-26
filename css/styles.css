@@ -1,0 +1,66 @@
+/* Shared responsive stylesheet for Car-Go */
+:root{
+  --bg:#ffffff;
+  --surface:#f8f9fa;
+  --muted:#6c757d;
+  --primary:#0d6efd;
+  --text:#212529;
+  --radius:0.5rem;
+  --container-max:1100px;
+  --gap:1rem;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:var(--container-max);margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}
+
+/* Header / Brand */
+.brand-logo, .navbar-brand-logo{height:36px;width:auto}
+.cargo-navbar{background:linear-gradient(90deg,#0b5ed7, #0d6efd);}
+.cargo-navbar .navbar-brand, .cargo-navbar .nav-link{color:#fff}
+
+/* Utility: skip link */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;margin:0 1rem 1rem 1rem;padding:.5rem;background:#fff;border-radius:.25rem;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* Sections and spacing */
+.section-block{padding-top:5rem;padding-bottom:3rem}
+@media(min-width:992px){.section-block{padding-top:6.5rem}}
+
+.hero-section{background:linear-gradient(180deg, rgba(13,110,253,0.04), transparent)}
+.hero-eyebrow{color:var(--primary);letter-spacing:0.02em}
+
+/* Cards and surfaces */
+.card{border-radius:var(--radius)}
+.about-card, .pricing-card, .car-card{background:var(--surface)}
+
+/* Forms and auth layout */
+.auth-main .auth-card{max-width:420px;background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,.06)}
+.auth-card .form-control{border-radius:6px}
+
+/* Footer */
+.site-footer, .about-footer, .auth-footer{background:transparent}
+
+/* Responsive helpers */
+@media(max-width:576px){
+  .navbar .auth-nav-item{display:none}
+  .hero-image-card img{max-width:100%;height:auto}
+}
+
+/* Buttons */
+.btn-primary{background:var(--primary);border-color:var(--primary)}
+.btn-outline-primary{color:var(--primary);border-color:var(--primary)}
+
+/* Small accessibility and focus styles */
+:focus{outline:3px solid rgba(13,110,253,.18);outline-offset:2px}
+
+/* Page-specific overrides loaded after this file can adjust these tokens */
